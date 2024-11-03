@@ -1,0 +1,236 @@
+layout: {qmk_keyboard: ferris_rotated}
+layers:
+  PRSTEN:
+  - '`'
+  - W
+  - C
+  - D
+  - F
+  - Q
+  - L
+  - U
+  - Y
+  - ''''
+  - {t: P, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: R, h: ^}
+  - {t: S, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: T, h: '$$mdi:apple-keyboard-command$$'}
+  - G
+  - M
+  - {t: N, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: A, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: I, h: ^}
+  - {t: O, h: '$$mdi:apple-keyboard-option$$'}
+  - X
+  - H
+  - V
+  - B
+  - /
+  - ','
+  - J
+  - K
+  - Z
+  - .
+  - {t: '$$mdi:keyboard-tab$$', h: FUNCTION}
+  - {t: '$$mdi:keyboard-space$$', h: NUM}
+  - {t: E, h: SYMBOLS}
+  - {t: '$$mdi:keyboard-return$$', h: NAV}
+  FUNCTION:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F7
+  - F8
+  - F9
+  - F10
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - F11
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F4
+  - F5
+  - F6
+  - F12
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - $$mdi:backspace$$
+  NUM:
+  - {t: ▽, type: trans}
+  - '-'
+  - +
+  - '='
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '7'
+  - '8'
+  - '9'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - /
+  - '*'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '4'
+  - '5'
+  - '6'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - '0'
+  - $$mdi:backspace-reverse-outline$$
+  SYMBOLS:
+  - {t: ▽, type: trans}
+  - ^
+  - '#'
+  - $
+  - €
+  - {t: ▽, type: trans}
+  - '|'
+  - '&'
+  - '%'
+  - {t: ▽, type: trans}
+  - '`'
+  - '"'
+  - ':'
+  - ;
+  - º
+  - ·
+  - _
+  - ','
+  - .
+  - ''''
+  - {t: ▽, type: trans}
+  - '@'
+  - '!'
+  - '?'
+  - ¿
+  - {t: ▽, type: trans}
+  - \
+  - <
+  - '>'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - $$phosphor:regular/sign-out$$
+  - {type: held}
+  - {t: ▽, type: trans}
+  NAV:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - $$phosphor:regular/caret-double-up$$
+  - $$mdi:arrow-up-thick$$
+  - $$phosphor:regular/caret-line-up$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - $$mdi:arrow-left-thick$$
+  - $$mdi:arrow-down-thick$$
+  - $$mdi:arrow-right-thick$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - $$phosphor:regular/caret-double-down$$
+  - {t: ▽, type: trans}
+  - $$phosphor:regular/caret-line-down$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  SETUP:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - $$mdi:keyboard-off-outline$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - $$mdi:cog-outline$$
+  - $$mdi:restart$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+combos:
+- p: [1, 11]
+  k: (
+- p: [2, 12]
+  k: '['
+- p: [3, 13]
+  k: '{'
+- p: [6, 16]
+  k: '-'
+- p: [7, 17]
+  k: +
+- p: [8, 18]
+  k: '='
+- p: [16, 26]
+  k: /
+- p: [17, 27]
+  k: '*'
+- p: [30, 31]
+  k: $$phosphor:regular/sign-out$$
+- p: [12, 17]
+  k: $$mdi:apple-keyboard-caps$$
+  a: top
+  d: true
+  arc_scale: 0.875

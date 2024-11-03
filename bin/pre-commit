@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+# --------------
+# UTILITIES
+# --------------
+
+source bin/colors.sh
+
+SOURCE="config"
+OUTPUT="keymap-drawer"
+CONFIG="$OUTPUT/config.yaml"
+RENDERS="$OUTPUT/renders"
+ADD_PENDING=()
+
+function get_filename() {
+  basename=${1##*/}
+  echo ${basename%.*}
+}
+
+function add_svg_classname() {
+  keyboard=$1
+  target=$2
+  [[ -z $3 ]] && layer="" || layer=$(echo " $layer" | awk '{print tolower($0)}')
+  sed -i "s/class=\"keymap\"/class=\"keymap $keyboard$layer\"/g" "$target"
+}
+
+function regenerate_keymaps() {
+  echo -ne "\n\n${BLU}Converting keymap files into yaml${RST}"
+  for FILE in "$SOURCE"/*.keymap; do
+    if [ -f "$FILE" ]; then
+      filename=$(get_filename $FILE)
+      target="$RENDERS/$filename.yaml"
+      keymap -c $CONFIG parse -z $FILE >$target
+      git add "$target"
+      echo -ne "\n$FILE -> $target"
+    fi
+  done
+}
+
+function draw_layers() {
+  for FILE in "$RENDERS"/*.yaml; do
+    if [ -f "$FILE" ]; then
+      filename=$(get_filename $FILE)
+      target="$RENDERS/$filename.svg"
+      echo -ne "\n\n${BLU}Drawing complete keymap and layers for $filename...${RST}"
+      keymap -c $CONFIG draw $FILE >$target
+      add_svg_classname "$filename" "$target"
+      git add "$target"
+      echo -ne "\n$target"
+      LAYERS=$(yq -r ".layers  | keys | .[]" "$RENDERS/$filename.yaml")
+
+      for layer in $LAYERS; do
+        svgfile=$(echo "${layer}" | awk '{print tolower($0)}')
+        target="$RENDERS/$filename.$svgfile.svg"
+        keymap -c $CONFIG draw -s ${layer} -- $FILE >$target
+        add_svg_classname "$filename" "$target" "$svgfile"
+        git add "$target"
+        echo -ne "\n$target"
+      done
+    fi
+  done
+}
+
+# -----------------------------------
+# DRAW IMAGES AND RESTAGE FOR COMMIT
+# -----------------------------------
+echo -ne "\n${YEL}----- pre-commit hook -----${RST}\n"
+regenerate_keymaps
+draw_layers
+echo -ne "\n\n${GRN}Done${RST}...\n"

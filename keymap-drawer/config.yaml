@@ -1,0 +1,226 @@
+draw_config:
+  key_w: 60.0
+  key_h: 56.0
+  split_gap: 30.0
+  combo_w: 24.0
+  combo_h: 22.0
+  key_rx: 6.0
+  key_ry: 6.0
+  dark_mode: false
+  n_columns: 1
+  separate_combo_diagrams: false
+  combo_diagrams_scale: 2
+  inner_pad_w: 1.0
+  inner_pad_h: 1.0
+  outer_pad_w: 30.0
+  outer_pad_h: 56.0
+  line_spacing: 1.2
+  arc_radius: 6.0
+  append_colon_to_layer_header: false
+  small_pad: 10
+  legend_rel_x: 0.0
+  legend_rel_y: 0.0
+  draw_key_sides: false
+  key_side_pars:
+    rel_x: 0
+    rel_y: 4
+    rel_w: 12
+    rel_h: 12
+    rx: 4
+    ry: 4
+  svg_extra_style: |
+    svg.keymap {
+      /* https://mui.com/material-ui/customization/color */
+      --color--mui-grey-900: #212121;
+      --color--mui-grey-800: #424242;
+      --color--mui-grey-600: #757575;
+      --color--mui-grey-400: #bdbdbd;
+      --color--mui-grey-300: #e0e0e0;
+      --color--mui-grey-200: #eeeeee;
+      --color--mui-grey-100: #f5f5f5;
+      --color--mui-orange: #ff6f00;
+      --color--mui-indigo: #3d5afe;
+    }
+    /* Layout title */
+    svg > g > g {
+      transform: translateY(3em);
+    }
+    text.label {
+      font-size: 1.2em;
+      font-weight: bold;
+      fill: var(--color--mui-grey-900);
+    }
+    /* Keys */
+    rect.key {
+      fill: var(--color--mui-grey-300);
+      stroke: var(--color--mui-grey-900);
+    }
+    .tap {
+      fill: var(--color--mui-grey-900);
+    }
+    path.combo {
+      stroke: var(--color--mui-grey-400);
+    }
+    rect.combo {
+      fill: var(--color--mui-grey-600);
+      stroke: var(--color--mui-grey-300);
+    }
+    .tap.combo {
+      fill: white;
+    }
+    .key.hold {
+      fill: var(--color--mui-indigo);
+    }
+    .key.layer-activator {
+      fill: var(--color--mui-orange);
+      text-decoration: unset;
+      font-size: 0.6em;
+    }
+    .key.held {
+      fill: var(--color--mui-orange);
+    }
+    /* 
+      Special thumbs hold color (for cradio only)
+      See the use of sed command in pre-commit hook
+      to insert keyboard name into SVG .keymap class
+    */
+    .keymap.cradio.prsten .key.keypos-30 .key.hold,
+    .keymap.cradio.prsten .key.keypos-31 .key.hold,
+    .keymap.cradio.prsten .key.keypos-32 .key.hold,
+    .keymap.cradio.prsten .key.keypos-33 .key.hold {
+      fill: var(--color--mui-orange);
+    }
+    /* Cleanup visually, focus using opacity */
+    .trans,
+    .trans .trans,
+    .none,
+    .ghost {
+      opacity: 0.5;
+    }
+    .key.trans text.trans {
+      opacity: 0.25;
+    }
+    .layer-NUM .combopos-0,
+    .layer-NUM .combopos-1,
+    .layer-NUM .combopos-2,
+    .layer-NUM .combopos-9 {
+      opacity: 0.25;
+    }
+    .layer-NAV .combo {
+      opacity: 0.25;
+    }
+    .layer-SYMBOLS .combopos-9 {
+      opacity: 0.25;
+    }
+    .layer-FUNCTION .combo {
+      opacity: 0.25;
+    }
+    .layer-SETUP .combo {
+      opacity: 0.25;
+    }
+    /* 
+      Special key positions (for cradio only)
+      See the use of sed command in pre-commit hook
+      to insert keyboard name into SVG .keymap class
+    */
+    .keymap.cradio .keypos-10 .key.hold,
+    .keymap.cradio .keypos-11 .key.hold,
+    .keymap.cradio .keypos-12 .key.hold,
+    .keymap.cradio .keypos-13 .key.hold {
+      transform: translate(0.9em, -0.85em);
+    }
+    .keymap.cradio .keypos-16 .key.hold,
+    .keymap.cradio .keypos-17 .key.hold,
+    .keymap.cradio .keypos-18 .key.hold,
+    .keymap.cradio .keypos-19 .key.hold {
+      transform: translate(-0.9em, -0.85em);
+    }
+    .keymap.cradio .key.keypos-30 {
+      transform: translate(15.5em, 16.125em) rotate(5deg);
+    }
+    .keymap.cradio .key.keypos-31 {
+      transform: translate(19.5em, 16.525em) rotate(5deg);
+    }
+    .keymap.cradio .combo.combopos-8 {
+      transform: translate(1.15em, -1.75em) rotate(5deg);
+    }
+    .keymap.cradio .key.keypos-32 {
+      transform: translate(28.5em, 16.5em) rotate(-5deg);
+    }
+    .keymap.cradio .key.keypos-33 {
+      transform: translate(32.5em, 16.1em) rotate(-5deg);
+    }
+  shrink_wide_legends: 7
+  style_layer_activators: true
+  glyph_tap_size: 12
+  glyph_hold_size: 12
+  glyph_shifted_size: 12
+  glyphs: {}
+parse_config:
+  preprocess: true
+  skip_binding_parsing: false
+  raw_binding_map: 
+    "&kp CAPS":
+      tap: $$mdi:apple-keyboard-caps$$
+    "&kp LALT":
+      tap: $$mdi:apple-keyboard-option$$
+    "&kp LCTRL": "^"
+    "&kp LSHFT":
+      tap: $$mdi:apple-keyboard-shift$$
+    "&kp LGUI":
+      tap: $$mdi:apple-keyboard-command$$
+    "&kp RALT":
+      tap: $$mdi:apple-keyboard-option$$
+    "&kp RCTRL": "^"
+    "&kp RSHFT":
+      tap: $$mdi:apple-keyboard-shift$$
+    "&kp RGUI":
+      tap: $$mdi:apple-keyboard-command$$
+    "&kp TAB":
+      tap: $$mdi:keyboard-tab$$
+    "&kp SPACE":
+      tap: $$mdi:keyboard-space$$
+    "&kp ENTER":
+      tap: $$mdi:keyboard-return$$
+    "&kp DEL":
+      tap: $$mdi:backspace-reverse-outline$$
+    "&kp BSPC":
+      tap: $$mdi:backspace$$
+    "&kp ESC":
+      tap: $$phosphor:regular/sign-out$$
+    "&kp LA(LS(N2))": "€"
+    "&kp LA(LS(N8))": "º"
+    "&kp LA(LS(N9))": "·"
+    "&kp RS(QMARK)": "¿"
+    "&kp HOME":
+      tap: $$phosphor:regular/caret-double-up$$
+    "&kp END":
+      tap: $$phosphor:regular/caret-double-down$$
+    "&kp PG_UP":
+      tap: $$phosphor:regular/caret-line-up$$
+    "&kp PG_DN":
+      tap: $$phosphor:regular/caret-line-down$$
+    "&kp UP":
+      tap: $$mdi:arrow-up-thick$$
+    "&kp DOWN":
+      tap: $$mdi:arrow-down-thick$$
+    "&kp LEFT":
+      tap: $$mdi:arrow-left-thick$$
+    "&kp RIGHT":
+      tap: $$mdi:arrow-right-thick$$
+    "&soft_off":
+      tap: $$mdi:keyboard-off-outline$$
+    "&sys_reset":
+      tap: $$mdi:restart$$
+    "&bootloader":
+      tap: $$mdi:cog-outline$$
+  toggle_label: toggle
+  tap_toggle_label: tap-toggle
+  mark_alternate_layer_activators: false
+  zmk_combos:
+    combo_caps:
+      dendron: true
+      arc_scale: 0.875
+      a: top
+  zmk_preamble: '#define KEYMAP_DRAWER'
+  zmk_additional_includes: []
