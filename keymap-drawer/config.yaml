@@ -103,13 +103,21 @@ draw_config:
     .layer-NUM .combopos-0,
     .layer-NUM .combopos-1,
     .layer-NUM .combopos-2,
-    .layer-NUM .combopos-9 {
+    .layer-NUM .combopos-9,
+    .layer-NUM .combopos-10,
+    .layer-NUM .combopos-11,
+    .layer-NUM .combopos-12,
+    .layer-NUM .combopos-13 {
       opacity: 0.25;
     }
     .layer-NAV .combo {
       opacity: 0.25;
     }
-    .layer-SYMBOLS .combopos-9 {
+    .layer-SYMBOLS .combopos-9,
+    .layer-SYMBOLS .combopos-10,
+    .layer-SYMBOLS .combopos-11,
+    .layer-SYMBOLS .combopos-12,
+    .layer-SYMBOLS .combopos-13 {
       opacity: 0.25;
     }
     .layer-FUNCTION .combo {

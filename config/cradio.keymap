@@ -82,6 +82,26 @@
             key-positions = <12 17>;
             bindings = <&kp CAPS>;
         };
+        combo_f {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp F>;
+        };
+        combo_q {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp Q>;
+        };
+        combo_slashqstn {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&kp FSLH>;
+        };
+        combo_comma {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&kp COMMA>;
+        };
     };
 
     keymap {

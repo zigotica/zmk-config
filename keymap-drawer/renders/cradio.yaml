@@ -234,3 +234,11 @@ combos:
   a: top
   d: true
   arc_scale: 0.875
+- p: [2, 3]
+  k: F
+- p: [6, 7]
+  k: Q
+- p: [22, 23]
+  k: /
+- p: [26, 27]
+  k: ','
